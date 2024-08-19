@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel = "stylesheet" href="/styles/home.css">
+    </head>
+
+  <body>
+    <h1>Hey it's abhay's Url shortner project</h1>
+    <% urls.forEach(url => { %>
+        <li><%= `${url.shortId},${'\t \t'+url.redirectURL}`%></li>
+    <% }) %>
+
+<% if (locals.id) { %>
+  <p>URL GENERATED:http://localhost:8000/<%= id %></p>
+<% } %>
+
+  <form method="post" action="/">
+        <label for="genurl">Enter your orignal url</label>
+        <input type="text" name="genurl" placeholder="https://">
+        <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
